@@ -3294,3 +3294,4 @@ Type: :worker
     (xp_gen_lsp 0.11.1) lib/gen_lsp.ex:369: anonymous fn/2 in XPGenLSP.loop/3
 
 17:00:28.941 [debug] sent notification server -> client window/logMessage
+17:01:34.461 [debug] handled request client -> server textDocument/documentSymbol in 85ms
