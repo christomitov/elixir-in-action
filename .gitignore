@@ -1,1 +1,4 @@
 .expert/
+_build/
+deps/
+*.beam
