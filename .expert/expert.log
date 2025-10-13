@@ -1,0 +1,2644 @@
+22:38:31.442 [debug] Child {XPLoggerFileBackend, :general_log} of Supervisor Logger.Backends.Supervisor started
+Pid: #PID<0.102.0>
+Start Call: Logger.Backends.Watcher.start_link({{XPLoggerFileBackend, :general_log}, {XPLoggerFileBackend, :general_log}})
+Restart: :transient
+Shutdown: 5000
+Type: :worker
+22:38:31.442 [info] Child Logger.Backends.Supervisor of Supervisor Logger.Backends.Internal started
+Pid: #PID<0.101.0>
+Start Call: Logger.Backends.Supervisor.start_link([{XPLoggerFileBackend, :general_log}])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:38:31.442 [info] Child Logger.Backends.Internal of Supervisor Logger.Supervisor started
+Pid: #PID<0.97.0>
+Start Call: Logger.Backends.Internal.start_link([])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:38:31.442 [info] Application logger started at :nonode@nohost
+22:38:31.442 [info] Application xp_mime started at :nonode@nohost
+22:38:31.442 [info] Application xp_hpax started at :nonode@nohost
+22:38:31.442 [info] Application crypto started at :nonode@nohost
+22:38:31.442 [info] Application asn1 started at :nonode@nohost
+22:38:31.442 [info] Application public_key started at :nonode@nohost
+22:38:31.443 [debug] Child :ssl_handler of Supervisor :logger_sup started
+Pid: #PID<0.107.0>
+Start Call: :logger_olp.start_link(:logger_std_h_ssl_handler, :logger_h_common, %{id: :ssl_handler, module: :logger_std_h, config: %{type: :standard_io, filesync_repeat_interval: :no_repeat}, level: :debug, filter_default: :stop, filters: [], formatter: {:ssl_logger, %{}}}, %{})
+Restart: :temporary
+Shutdown: 2000
+Type: :worker
+22:38:31.445 [info] Child :ssl_pem_cache of Supervisor :ssl_admin_sup started
+Pid: #PID<0.111.0>
+Start Call: :ssl_pem_cache.start_link([])
+Restart: :permanent
+Shutdown: 4000
+Type: :worker
+22:38:31.446 [info] Child :ssl_manager of Supervisor :ssl_admin_sup started
+Pid: #PID<0.112.0>
+Start Call: :ssl_manager.start_link([])
+Restart: :permanent
+Shutdown: 4000
+Type: :worker
+22:38:31.447 [info] Child :tls_client_ticket_store of Supervisor :ssl_admin_sup started
+Pid: #PID<0.113.0>
+Start Call: :tls_client_ticket_store.start_link(1000, 7200)
+Restart: :permanent
+Shutdown: 4000
+Type: :worker
+22:38:31.447 [info] Child :ssl_admin_sup of Supervisor :ssl_sup started
+Pid: #PID<0.110.0>
+Start Call: :ssl_admin_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:31.448 [info] Child :tls_connection_sup of Supervisor :tls_sup started
+Pid: #PID<0.116.0>
+Start Call: :tls_connection_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:31.449 [info] Child :ssl_listen_tracker_sup of Supervisor :tls_server_sup started
+Pid: #PID<0.118.0>
+Start Call: :ssl_listen_tracker_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:31.449 [info] Child :tls_server_session_ticket of Supervisor :tls_server_sup started
+Pid: #PID<0.119.0>
+Start Call: :tls_server_session_ticket_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:31.449 [info] Child :ssl_server_session_cache_sup of Supervisor :tls_server_sup started
+Pid: #PID<0.120.0>
+Start Call: :ssl_server_session_cache_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:31.450 [info] Child :ssl_upgrade_server_session_cache_sup of Supervisor :tls_server_sup started
+Pid: #PID<0.121.0>
+Start Call: :ssl_upgrade_server_session_cache_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:31.450 [info] Child :tls_server_sup of Supervisor :tls_sup started
+Pid: #PID<0.117.0>
+Start Call: :tls_server_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:31.450 [info] Child :tls_sup of Supervisor :ssl_connection_sup started
+Pid: #PID<0.115.0>
+Start Call: :tls_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:31.450 [info] Child :dtls_connection_sup of Supervisor :dtls_sup started
+Pid: #PID<0.123.0>
+Start Call: :dtls_connection_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:31.451 [info] Child :dtls_listener_sup of Supervisor :dtls_server_sup started
+Pid: #PID<0.125.0>
+Start Call: :dtls_listener_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:31.451 [info] Child :dtls_server_session_cache_sup of Supervisor :dtls_server_sup started
+Pid: #PID<0.126.0>
+Start Call: :dtls_server_session_cache_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:31.451 [info] Child :dtls_server_sup of Supervisor :dtls_sup started
+Pid: #PID<0.124.0>
+Start Call: :dtls_server_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:31.451 [info] Child :dtls_sup of Supervisor :ssl_connection_sup started
+Pid: #PID<0.122.0>
+Start Call: :dtls_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:31.451 [info] Child :ssl_connection_sup of Supervisor :ssl_sup started
+Pid: #PID<0.114.0>
+Start Call: :ssl_connection_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:31.451 [info] Application ssl started at :nonode@nohost
+22:38:31.452 [info] Application xp_mint started at :nonode@nohost
+22:38:31.452 [info] Application xp_nimble_options started at :nonode@nohost
+22:38:31.453 [info] Child XPNimblePool.TaskSupervisor of Supervisor #PID<0.132.0> (Supervisor.Default) started
+Pid: #PID<0.133.0>
+Start Call: Task.Supervisor.start_link([name: XPNimblePool.TaskSupervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:38:31.453 [info] Application xp_nimble_pool started at :nonode@nohost
+22:38:31.454 [info] Child :telemetry_handler_table of Supervisor :telemetry_sup started
+Pid: #PID<0.137.0>
+Start Call: :telemetry_handler_table.start_link()
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:38:31.454 [info] Application xp_telemetry started at :nonode@nohost
+22:38:31.454 [info] Application xp_finch started at :nonode@nohost
+22:38:31.465 [info] Child XPReq.Finch.PIDPartition0 of Supervisor XPReq.Finch started
+Pid: #PID<0.143.0>
+Start Call: Registry.Partition.start_link(XPReq.Finch.PIDPartition0, {:duplicate, XPReq.Finch, 0, 1, XPReq.Finch.KeyPartition0, XPReq.Finch.PIDPartition0, [], false})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:38:31.465 [info] Child XPReq.Finch of Supervisor XPReq.Finch.Supervisor started
+Pid: #PID<0.142.0>
+Start Call: Registry.start_link([keys: :duplicate, name: XPReq.Finch, meta: [config: %{pools: %{}, registry_name: XPReq.Finch, supervisor_name: XPReq.Finch.PoolSupervisor, manager_name: XPReq.Finch.PoolManager, default_pool_config: %{count: 1, size: 50, mod: XPFinch.HTTP1.Pool, conn_opts: [protocols: [:http1], transport_opts: [keepalive: true, nodelay: true, timeout: 5000], ssl_key_log_file_device: nil], pool_max_idle_time: :infinity, conn_max_idle_time: :infinity, start_pool_metrics?: false}}]])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:38:31.465 [info] Child XPReq.Finch.PoolSupervisor of Supervisor XPReq.Finch.Supervisor started
+Pid: #PID<0.144.0>
+Start Call: DynamicSupervisor.start_link([name: XPReq.Finch.PoolSupervisor, strategy: :one_for_one])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:38:31.465 [info] Child XPFinch.PoolManager of Supervisor XPReq.Finch.Supervisor started
+Pid: #PID<0.145.0>
+Start Call: XPFinch.PoolManager.start_link(%{pools: %{}, registry_name: XPReq.Finch, supervisor_name: XPReq.Finch.PoolSupervisor, manager_name: XPReq.Finch.PoolManager, default_pool_config: %{count: 1, size: 50, mod: XPFinch.HTTP1.Pool, conn_opts: [protocols: [:http1], transport_opts: [keepalive: true, nodelay: true, timeout: 5000], ssl_key_log_file_device: nil], pool_max_idle_time: :infinity, conn_max_idle_time: :infinity, start_pool_metrics?: false}})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:38:31.465 [info] Child XPReq.Finch of Supervisor #PID<0.140.0> (Supervisor.Default) started
+Pid: #PID<0.141.0>
+Start Call: XPFinch.start_link([name: XPReq.Finch, pools: %{default: [protocols: [:http1]]}])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:38:31.465 [info] Child XPReq.FinchSupervisor of Supervisor #PID<0.140.0> (Supervisor.Default) started
+Pid: #PID<0.146.0>
+Start Call: DynamicSupervisor.start_link([strategy: :one_for_one, name: XPReq.FinchSupervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:38:31.465 [info] Child XPReq.Test.Ownership of Supervisor #PID<0.140.0> (Supervisor.Default) started
+Pid: #PID<0.147.0>
+Start Call: XPReq.Test.Ownership.start_link([name: XPReq.Test.Ownership])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:38:31.465 [info] Application xp_req started at :nonode@nohost
+22:38:31.465 [info] Application burrito started at :nonode@nohost
+22:38:31.465 [info] Application erts started at :nonode@nohost
+22:38:31.465 [info] Application xp_schematic started at :nonode@nohost
+22:38:31.465 [info] Application xp_typed_struct started at :nonode@nohost
+22:38:31.465 [info] Application xp_gen_lsp started at :nonode@nohost
+22:38:31.470 [info] Child XPSnowflake.Generator of Supervisor #PID<0.150.0> (Supervisor.Default) started
+Pid: #PID<0.151.0>
+Start Call: XPSnowflake.Generator.start_link(0, 1023)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:38:31.470 [info] Application xp_snowflake started at :nonode@nohost
+22:38:31.470 [info] Application xp_sourceror started at :nonode@nohost
+22:38:31.470 [info] Application xp_forge started at :nonode@nohost
+22:38:31.470 [info] Application xp_logger_file_backend started at :nonode@nohost
+22:38:31.472 [info] Child :ttb_autostart of Supervisor :runtime_tools_sup started
+Pid: #PID<0.155.0>
+Start Call: :ttb_autostart.start_link()
+Restart: :temporary
+Shutdown: 3000
+Type: :worker
+22:38:31.472 [info] Application runtime_tools started at :nonode@nohost
+22:38:31.472 [info] Application et started at :nonode@nohost
+22:38:31.472 [info] Application observer started at :nonode@nohost
+22:38:31.472 [info] Application xp_path_glob started at :nonode@nohost
+22:38:31.475 [info] Child XPForge.Document.Store of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.159.0>
+Start Call: XPForge.Document.Store.start_link([derive: [analysis: &XPForge.Ast.analyze/1]])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:38:31.476 [info] Child XPExpert.ProjectSupervisor of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.160.0>
+Start Call: DynamicSupervisor.start_link([name: XPExpert.ProjectSupervisor, strategy: :one_for_one])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:38:31.476 [info] Child XPExpert.DynamicSupervisor of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.161.0>
+Start Call: DynamicSupervisor.start_link([name: XPExpert.DynamicSupervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:38:31.477 [info] Child XPGenLSP.Assigns of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.162.0>
+Start Call: XPGenLSP.Assigns.start_link([name: XPExpert.Assigns])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:38:31.477 [info] Child :expert_task_queue of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.163.0>
+Start Call: Task.Supervisor.start_link([name: :expert_task_queue])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:38:31.477 [info] Child XPGenLSP.Buffer of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.164.0>
+Start Call: XPGenLSP.Buffer.start_link([name: XPExpert.Buffer])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:38:31.477 [debug] [name: XPExpert, buffer: XPExpert.Buffer, task_supervisor: :expert_task_queue, dynamic_supervisor: XPExpert.DynamicSupervisor, assigns: XPExpert.Assigns]
+22:38:31.479 [info] Child XPExpert of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.165.0>
+Start Call: XPExpert.start_link([name: XPExpert, buffer: XPExpert.Buffer, task_supervisor: :expert_task_queue, dynamic_supervisor: XPExpert.DynamicSupervisor, assigns: XPExpert.Assigns])
+Restart: :permanent
+Shutdown: 500
+Type: :worker
+22:38:31.479 [info] Application xp_expert started at :nonode@nohost
+22:38:31.511 [info] Starting project at uri 
+22:38:31.513 [info] Engine initialized
+22:38:31.535 [debug] handled request client -> server initialize in 51ms
+22:38:31.539 [debug] sent request server -> client client/registerCapability
+22:38:31.548 [info] ################### opened file:///Users/christo/Work/elixir-in-action/todolist.ex
+22:38:31.548 [debug] handled notification client -> server textDocument/didOpen in 11ms
+22:38:31.549 [debug] handled notification client -> server initialized in 12ms
+22:38:31.550 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/document_symbols.ex:15: XPExpert.Provider.Handlers.DocumentSymbols.handle/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:94: XPExpert.handle_request/2
+    (xp_gen_lsp 0.11.1) lib/gen_lsp.ex:369: anonymous fn/2 in XPGenLSP.loop/3
+
+22:38:31.551 [debug] sent notification server -> client window/logMessage
+22:38:35.182 [debug] sent notification server -> client window/logMessage
+22:38:35.183 [info] Shutting down
+22:38:35.184 [error] ** (XPGenLSP.InvalidResponse) Invalid response for request shutdown.
+
+Response: {:ok, nil}
+Errors: "expected either null or a %XPGenLSP.ErrorResponse{}"
+
+22:38:35.184 [debug] handled request client -> server shutdown in 15ms
+22:38:35.199 [info] SIGTERM received - shutting down
+
+22:38:38.565 [debug] Child {XPLoggerFileBackend, :general_log} of Supervisor Logger.Backends.Supervisor started
+Pid: #PID<0.102.0>
+Start Call: Logger.Backends.Watcher.start_link({{XPLoggerFileBackend, :general_log}, {XPLoggerFileBackend, :general_log}})
+Restart: :transient
+Shutdown: 5000
+Type: :worker
+22:38:38.565 [info] Child Logger.Backends.Supervisor of Supervisor Logger.Backends.Internal started
+Pid: #PID<0.101.0>
+Start Call: Logger.Backends.Supervisor.start_link([{XPLoggerFileBackend, :general_log}])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:38:38.565 [info] Child Logger.Backends.Internal of Supervisor Logger.Supervisor started
+Pid: #PID<0.97.0>
+Start Call: Logger.Backends.Internal.start_link([])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:38:38.565 [info] Application logger started at :nonode@nohost
+22:38:38.565 [info] Application xp_mime started at :nonode@nohost
+22:38:38.565 [info] Application xp_hpax started at :nonode@nohost
+22:38:38.565 [info] Application crypto started at :nonode@nohost
+22:38:38.565 [info] Application asn1 started at :nonode@nohost
+22:38:38.565 [info] Application public_key started at :nonode@nohost
+22:38:38.566 [debug] Child :ssl_handler of Supervisor :logger_sup started
+Pid: #PID<0.107.0>
+Start Call: :logger_olp.start_link(:logger_std_h_ssl_handler, :logger_h_common, %{id: :ssl_handler, module: :logger_std_h, config: %{type: :standard_io, filesync_repeat_interval: :no_repeat}, level: :debug, filter_default: :stop, filters: [], formatter: {:ssl_logger, %{}}}, %{})
+Restart: :temporary
+Shutdown: 2000
+Type: :worker
+22:38:38.568 [info] Child :ssl_pem_cache of Supervisor :ssl_admin_sup started
+Pid: #PID<0.111.0>
+Start Call: :ssl_pem_cache.start_link([])
+Restart: :permanent
+Shutdown: 4000
+Type: :worker
+22:38:38.570 [info] Child :ssl_manager of Supervisor :ssl_admin_sup started
+Pid: #PID<0.112.0>
+Start Call: :ssl_manager.start_link([])
+Restart: :permanent
+Shutdown: 4000
+Type: :worker
+22:38:38.570 [info] Child :tls_client_ticket_store of Supervisor :ssl_admin_sup started
+Pid: #PID<0.113.0>
+Start Call: :tls_client_ticket_store.start_link(1000, 7200)
+Restart: :permanent
+Shutdown: 4000
+Type: :worker
+22:38:38.570 [info] Child :ssl_admin_sup of Supervisor :ssl_sup started
+Pid: #PID<0.110.0>
+Start Call: :ssl_admin_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:38.571 [info] Child :tls_connection_sup of Supervisor :tls_sup started
+Pid: #PID<0.116.0>
+Start Call: :tls_connection_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:38.572 [info] Child :ssl_listen_tracker_sup of Supervisor :tls_server_sup started
+Pid: #PID<0.118.0>
+Start Call: :ssl_listen_tracker_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:38.572 [info] Child :tls_server_session_ticket of Supervisor :tls_server_sup started
+Pid: #PID<0.119.0>
+Start Call: :tls_server_session_ticket_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:38.572 [info] Child :ssl_server_session_cache_sup of Supervisor :tls_server_sup started
+Pid: #PID<0.120.0>
+Start Call: :ssl_server_session_cache_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:38.573 [info] Child :ssl_upgrade_server_session_cache_sup of Supervisor :tls_server_sup started
+Pid: #PID<0.121.0>
+Start Call: :ssl_upgrade_server_session_cache_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:38.573 [info] Child :tls_server_sup of Supervisor :tls_sup started
+Pid: #PID<0.117.0>
+Start Call: :tls_server_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:38.573 [info] Child :tls_sup of Supervisor :ssl_connection_sup started
+Pid: #PID<0.115.0>
+Start Call: :tls_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:38.573 [info] Child :dtls_connection_sup of Supervisor :dtls_sup started
+Pid: #PID<0.123.0>
+Start Call: :dtls_connection_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:38.574 [info] Child :dtls_listener_sup of Supervisor :dtls_server_sup started
+Pid: #PID<0.125.0>
+Start Call: :dtls_listener_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:38.574 [info] Child :dtls_server_session_cache_sup of Supervisor :dtls_server_sup started
+Pid: #PID<0.126.0>
+Start Call: :dtls_server_session_cache_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:38.575 [info] Child :dtls_server_sup of Supervisor :dtls_sup started
+Pid: #PID<0.124.0>
+Start Call: :dtls_server_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:38.575 [info] Child :dtls_sup of Supervisor :ssl_connection_sup started
+Pid: #PID<0.122.0>
+Start Call: :dtls_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:38.575 [info] Child :ssl_connection_sup of Supervisor :ssl_sup started
+Pid: #PID<0.114.0>
+Start Call: :ssl_connection_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:38:38.575 [info] Application ssl started at :nonode@nohost
+22:38:38.575 [info] Application xp_mint started at :nonode@nohost
+22:38:38.575 [info] Application xp_nimble_options started at :nonode@nohost
+22:38:38.577 [info] Child XPNimblePool.TaskSupervisor of Supervisor #PID<0.132.0> (Supervisor.Default) started
+Pid: #PID<0.133.0>
+Start Call: Task.Supervisor.start_link([name: XPNimblePool.TaskSupervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:38:38.577 [info] Application xp_nimble_pool started at :nonode@nohost
+22:38:38.578 [info] Child :telemetry_handler_table of Supervisor :telemetry_sup started
+Pid: #PID<0.137.0>
+Start Call: :telemetry_handler_table.start_link()
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:38:38.578 [info] Application xp_telemetry started at :nonode@nohost
+22:38:38.578 [info] Application xp_finch started at :nonode@nohost
+22:38:38.589 [info] Child XPReq.Finch.PIDPartition0 of Supervisor XPReq.Finch started
+Pid: #PID<0.143.0>
+Start Call: Registry.Partition.start_link(XPReq.Finch.PIDPartition0, {:duplicate, XPReq.Finch, 0, 1, XPReq.Finch.KeyPartition0, XPReq.Finch.PIDPartition0, [], false})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:38:38.589 [info] Child XPReq.Finch of Supervisor XPReq.Finch.Supervisor started
+Pid: #PID<0.142.0>
+Start Call: Registry.start_link([keys: :duplicate, name: XPReq.Finch, meta: [config: %{pools: %{}, registry_name: XPReq.Finch, supervisor_name: XPReq.Finch.PoolSupervisor, manager_name: XPReq.Finch.PoolManager, default_pool_config: %{count: 1, size: 50, mod: XPFinch.HTTP1.Pool, conn_opts: [protocols: [:http1], transport_opts: [keepalive: true, nodelay: true, timeout: 5000], ssl_key_log_file_device: nil], pool_max_idle_time: :infinity, conn_max_idle_time: :infinity, start_pool_metrics?: false}}]])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:38:38.589 [info] Child XPReq.Finch.PoolSupervisor of Supervisor XPReq.Finch.Supervisor started
+Pid: #PID<0.144.0>
+Start Call: DynamicSupervisor.start_link([name: XPReq.Finch.PoolSupervisor, strategy: :one_for_one])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:38:38.589 [info] Child XPFinch.PoolManager of Supervisor XPReq.Finch.Supervisor started
+Pid: #PID<0.145.0>
+Start Call: XPFinch.PoolManager.start_link(%{pools: %{}, registry_name: XPReq.Finch, supervisor_name: XPReq.Finch.PoolSupervisor, manager_name: XPReq.Finch.PoolManager, default_pool_config: %{count: 1, size: 50, mod: XPFinch.HTTP1.Pool, conn_opts: [protocols: [:http1], transport_opts: [keepalive: true, nodelay: true, timeout: 5000], ssl_key_log_file_device: nil], pool_max_idle_time: :infinity, conn_max_idle_time: :infinity, start_pool_metrics?: false}})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:38:38.589 [info] Child XPReq.Finch of Supervisor #PID<0.140.0> (Supervisor.Default) started
+Pid: #PID<0.141.0>
+Start Call: XPFinch.start_link([name: XPReq.Finch, pools: %{default: [protocols: [:http1]]}])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:38:38.589 [info] Child XPReq.FinchSupervisor of Supervisor #PID<0.140.0> (Supervisor.Default) started
+Pid: #PID<0.146.0>
+Start Call: DynamicSupervisor.start_link([strategy: :one_for_one, name: XPReq.FinchSupervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:38:38.589 [info] Child XPReq.Test.Ownership of Supervisor #PID<0.140.0> (Supervisor.Default) started
+Pid: #PID<0.147.0>
+Start Call: XPReq.Test.Ownership.start_link([name: XPReq.Test.Ownership])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:38:38.589 [info] Application xp_req started at :nonode@nohost
+22:38:38.589 [info] Application burrito started at :nonode@nohost
+22:38:38.589 [info] Application erts started at :nonode@nohost
+22:38:38.589 [info] Application xp_schematic started at :nonode@nohost
+22:38:38.589 [info] Application xp_typed_struct started at :nonode@nohost
+22:38:38.589 [info] Application xp_gen_lsp started at :nonode@nohost
+22:38:38.593 [info] Child XPSnowflake.Generator of Supervisor #PID<0.150.0> (Supervisor.Default) started
+Pid: #PID<0.151.0>
+Start Call: XPSnowflake.Generator.start_link(0, 1023)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:38:38.593 [info] Application xp_snowflake started at :nonode@nohost
+22:38:38.593 [info] Application xp_sourceror started at :nonode@nohost
+22:38:38.593 [info] Application xp_forge started at :nonode@nohost
+22:38:38.594 [info] Application xp_logger_file_backend started at :nonode@nohost
+22:38:38.596 [info] Child :ttb_autostart of Supervisor :runtime_tools_sup started
+Pid: #PID<0.155.0>
+Start Call: :ttb_autostart.start_link()
+Restart: :temporary
+Shutdown: 3000
+Type: :worker
+22:38:38.596 [info] Application runtime_tools started at :nonode@nohost
+22:38:38.596 [info] Application et started at :nonode@nohost
+22:38:38.596 [info] Application observer started at :nonode@nohost
+22:38:38.596 [info] Application xp_path_glob started at :nonode@nohost
+22:38:38.600 [info] Child XPForge.Document.Store of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.159.0>
+Start Call: XPForge.Document.Store.start_link([derive: [analysis: &XPForge.Ast.analyze/1]])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:38:38.601 [info] Child XPExpert.ProjectSupervisor of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.160.0>
+Start Call: DynamicSupervisor.start_link([name: XPExpert.ProjectSupervisor, strategy: :one_for_one])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:38:38.601 [info] Child XPExpert.DynamicSupervisor of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.161.0>
+Start Call: DynamicSupervisor.start_link([name: XPExpert.DynamicSupervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:38:38.602 [info] Child XPGenLSP.Assigns of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.162.0>
+Start Call: XPGenLSP.Assigns.start_link([name: XPExpert.Assigns])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:38:38.602 [info] Child :expert_task_queue of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.163.0>
+Start Call: Task.Supervisor.start_link([name: :expert_task_queue])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:38:38.602 [info] Child XPGenLSP.Buffer of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.164.0>
+Start Call: XPGenLSP.Buffer.start_link([name: XPExpert.Buffer])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:38:38.602 [debug] [name: XPExpert, buffer: XPExpert.Buffer, task_supervisor: :expert_task_queue, dynamic_supervisor: XPExpert.DynamicSupervisor, assigns: XPExpert.Assigns]
+22:38:38.605 [info] Child XPExpert of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.165.0>
+Start Call: XPExpert.start_link([name: XPExpert, buffer: XPExpert.Buffer, task_supervisor: :expert_task_queue, dynamic_supervisor: XPExpert.DynamicSupervisor, assigns: XPExpert.Assigns])
+Restart: :permanent
+Shutdown: 500
+Type: :worker
+22:38:38.605 [info] Application xp_expert started at :nonode@nohost
+22:38:38.645 [info] Starting project at uri 
+22:38:38.648 [info] Engine initialized
+22:38:38.675 [debug] handled request client -> server initialize in 64ms
+22:38:38.679 [debug] sent request server -> client client/registerCapability
+22:38:38.690 [info] ################### opened file:///Users/christo/Work/elixir-in-action/todolist.ex
+22:38:38.690 [debug] handled notification client -> server textDocument/didOpen in 13ms
+22:38:38.691 [debug] handled notification client -> server initialized in 15ms
+22:38:38.692 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/document_symbols.ex:15: XPExpert.Provider.Handlers.DocumentSymbols.handle/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:94: XPExpert.handle_request/2
+    (xp_gen_lsp 0.11.1) lib/gen_lsp.ex:369: anonymous fn/2 in XPGenLSP.loop/3
+
+22:38:38.693 [debug] sent notification server -> client window/logMessage
+22:38:40.178 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/document_symbols.ex:15: XPExpert.Provider.Handlers.DocumentSymbols.handle/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:94: XPExpert.handle_request/2
+    (xp_gen_lsp 0.11.1) lib/gen_lsp.ex:369: anonymous fn/2 in XPGenLSP.loop/3
+
+22:38:40.178 [debug] sent notification server -> client window/logMessage
+22:40:03.907 [debug] sent notification server -> client window/logMessage
+22:40:03.907 [info] Shutting down
+22:40:03.907 [error] Writer crashed (:epipe)
+22:40:07.033 [debug] Child {XPLoggerFileBackend, :general_log} of Supervisor Logger.Backends.Supervisor started
+Pid: #PID<0.102.0>
+Start Call: Logger.Backends.Watcher.start_link({{XPLoggerFileBackend, :general_log}, {XPLoggerFileBackend, :general_log}})
+Restart: :transient
+Shutdown: 5000
+Type: :worker
+22:40:07.033 [info] Child Logger.Backends.Supervisor of Supervisor Logger.Backends.Internal started
+Pid: #PID<0.101.0>
+Start Call: Logger.Backends.Supervisor.start_link([{XPLoggerFileBackend, :general_log}])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:40:07.033 [info] Child Logger.Backends.Internal of Supervisor Logger.Supervisor started
+Pid: #PID<0.97.0>
+Start Call: Logger.Backends.Internal.start_link([])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:40:07.033 [info] Application logger started at :nonode@nohost
+22:40:07.033 [info] Application xp_mime started at :nonode@nohost
+22:40:07.033 [info] Application xp_hpax started at :nonode@nohost
+22:40:07.033 [info] Application crypto started at :nonode@nohost
+22:40:07.033 [info] Application asn1 started at :nonode@nohost
+22:40:07.033 [info] Application public_key started at :nonode@nohost
+22:40:07.034 [debug] Child :ssl_handler of Supervisor :logger_sup started
+Pid: #PID<0.107.0>
+Start Call: :logger_olp.start_link(:logger_std_h_ssl_handler, :logger_h_common, %{id: :ssl_handler, module: :logger_std_h, config: %{type: :standard_io, filesync_repeat_interval: :no_repeat}, level: :debug, filter_default: :stop, filters: [], formatter: {:ssl_logger, %{}}}, %{})
+Restart: :temporary
+Shutdown: 2000
+Type: :worker
+22:40:07.037 [info] Child :ssl_pem_cache of Supervisor :ssl_admin_sup started
+Pid: #PID<0.111.0>
+Start Call: :ssl_pem_cache.start_link([])
+Restart: :permanent
+Shutdown: 4000
+Type: :worker
+22:40:07.038 [info] Child :ssl_manager of Supervisor :ssl_admin_sup started
+Pid: #PID<0.112.0>
+Start Call: :ssl_manager.start_link([])
+Restart: :permanent
+Shutdown: 4000
+Type: :worker
+22:40:07.039 [info] Child :tls_client_ticket_store of Supervisor :ssl_admin_sup started
+Pid: #PID<0.113.0>
+Start Call: :tls_client_ticket_store.start_link(1000, 7200)
+Restart: :permanent
+Shutdown: 4000
+Type: :worker
+22:40:07.039 [info] Child :ssl_admin_sup of Supervisor :ssl_sup started
+Pid: #PID<0.110.0>
+Start Call: :ssl_admin_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:40:07.040 [info] Child :tls_connection_sup of Supervisor :tls_sup started
+Pid: #PID<0.116.0>
+Start Call: :tls_connection_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:40:07.041 [info] Child :ssl_listen_tracker_sup of Supervisor :tls_server_sup started
+Pid: #PID<0.118.0>
+Start Call: :ssl_listen_tracker_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:40:07.041 [info] Child :tls_server_session_ticket of Supervisor :tls_server_sup started
+Pid: #PID<0.119.0>
+Start Call: :tls_server_session_ticket_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:40:07.048 [info] Child :ssl_server_session_cache_sup of Supervisor :tls_server_sup started
+Pid: #PID<0.120.0>
+Start Call: :ssl_server_session_cache_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:40:07.049 [info] Child :ssl_upgrade_server_session_cache_sup of Supervisor :tls_server_sup started
+Pid: #PID<0.121.0>
+Start Call: :ssl_upgrade_server_session_cache_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:40:07.049 [info] Child :tls_server_sup of Supervisor :tls_sup started
+Pid: #PID<0.117.0>
+Start Call: :tls_server_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:40:07.049 [info] Child :tls_sup of Supervisor :ssl_connection_sup started
+Pid: #PID<0.115.0>
+Start Call: :tls_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:40:07.050 [info] Child :dtls_connection_sup of Supervisor :dtls_sup started
+Pid: #PID<0.123.0>
+Start Call: :dtls_connection_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:40:07.050 [info] Child :dtls_listener_sup of Supervisor :dtls_server_sup started
+Pid: #PID<0.125.0>
+Start Call: :dtls_listener_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:40:07.051 [info] Child :dtls_server_session_cache_sup of Supervisor :dtls_server_sup started
+Pid: #PID<0.126.0>
+Start Call: :dtls_server_session_cache_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:40:07.051 [info] Child :dtls_server_sup of Supervisor :dtls_sup started
+Pid: #PID<0.124.0>
+Start Call: :dtls_server_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:40:07.051 [info] Child :dtls_sup of Supervisor :ssl_connection_sup started
+Pid: #PID<0.122.0>
+Start Call: :dtls_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:40:07.051 [info] Child :ssl_connection_sup of Supervisor :ssl_sup started
+Pid: #PID<0.114.0>
+Start Call: :ssl_connection_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:40:07.051 [info] Application ssl started at :nonode@nohost
+22:40:07.051 [info] Application xp_mint started at :nonode@nohost
+22:40:07.051 [info] Application xp_nimble_options started at :nonode@nohost
+22:40:07.053 [info] Child XPNimblePool.TaskSupervisor of Supervisor #PID<0.132.0> (Supervisor.Default) started
+Pid: #PID<0.133.0>
+Start Call: Task.Supervisor.start_link([name: XPNimblePool.TaskSupervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:40:07.053 [info] Application xp_nimble_pool started at :nonode@nohost
+22:40:07.054 [info] Child :telemetry_handler_table of Supervisor :telemetry_sup started
+Pid: #PID<0.137.0>
+Start Call: :telemetry_handler_table.start_link()
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:40:07.054 [info] Application xp_telemetry started at :nonode@nohost
+22:40:07.054 [info] Application xp_finch started at :nonode@nohost
+22:40:07.065 [info] Child XPReq.Finch.PIDPartition0 of Supervisor XPReq.Finch started
+Pid: #PID<0.143.0>
+Start Call: Registry.Partition.start_link(XPReq.Finch.PIDPartition0, {:duplicate, XPReq.Finch, 0, 1, XPReq.Finch.KeyPartition0, XPReq.Finch.PIDPartition0, [], false})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:40:07.065 [info] Child XPReq.Finch of Supervisor XPReq.Finch.Supervisor started
+Pid: #PID<0.142.0>
+Start Call: Registry.start_link([keys: :duplicate, name: XPReq.Finch, meta: [config: %{pools: %{}, registry_name: XPReq.Finch, supervisor_name: XPReq.Finch.PoolSupervisor, manager_name: XPReq.Finch.PoolManager, default_pool_config: %{count: 1, size: 50, mod: XPFinch.HTTP1.Pool, conn_opts: [protocols: [:http1], transport_opts: [keepalive: true, nodelay: true, timeout: 5000], ssl_key_log_file_device: nil], pool_max_idle_time: :infinity, conn_max_idle_time: :infinity, start_pool_metrics?: false}}]])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:40:07.065 [info] Child XPReq.Finch.PoolSupervisor of Supervisor XPReq.Finch.Supervisor started
+Pid: #PID<0.144.0>
+Start Call: DynamicSupervisor.start_link([name: XPReq.Finch.PoolSupervisor, strategy: :one_for_one])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:40:07.065 [info] Child XPFinch.PoolManager of Supervisor XPReq.Finch.Supervisor started
+Pid: #PID<0.145.0>
+Start Call: XPFinch.PoolManager.start_link(%{pools: %{}, registry_name: XPReq.Finch, supervisor_name: XPReq.Finch.PoolSupervisor, manager_name: XPReq.Finch.PoolManager, default_pool_config: %{count: 1, size: 50, mod: XPFinch.HTTP1.Pool, conn_opts: [protocols: [:http1], transport_opts: [keepalive: true, nodelay: true, timeout: 5000], ssl_key_log_file_device: nil], pool_max_idle_time: :infinity, conn_max_idle_time: :infinity, start_pool_metrics?: false}})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:40:07.065 [info] Child XPReq.Finch of Supervisor #PID<0.140.0> (Supervisor.Default) started
+Pid: #PID<0.141.0>
+Start Call: XPFinch.start_link([name: XPReq.Finch, pools: %{default: [protocols: [:http1]]}])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:40:07.065 [info] Child XPReq.FinchSupervisor of Supervisor #PID<0.140.0> (Supervisor.Default) started
+Pid: #PID<0.146.0>
+Start Call: DynamicSupervisor.start_link([strategy: :one_for_one, name: XPReq.FinchSupervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:40:07.065 [info] Child XPReq.Test.Ownership of Supervisor #PID<0.140.0> (Supervisor.Default) started
+Pid: #PID<0.147.0>
+Start Call: XPReq.Test.Ownership.start_link([name: XPReq.Test.Ownership])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:40:07.065 [info] Application xp_req started at :nonode@nohost
+22:40:07.065 [info] Application burrito started at :nonode@nohost
+22:40:07.065 [info] Application erts started at :nonode@nohost
+22:40:07.065 [info] Application xp_schematic started at :nonode@nohost
+22:40:07.065 [info] Application xp_typed_struct started at :nonode@nohost
+22:40:07.065 [info] Application xp_gen_lsp started at :nonode@nohost
+22:40:07.070 [info] Child XPSnowflake.Generator of Supervisor #PID<0.150.0> (Supervisor.Default) started
+Pid: #PID<0.151.0>
+Start Call: XPSnowflake.Generator.start_link(0, 1023)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:40:07.070 [info] Application xp_snowflake started at :nonode@nohost
+22:40:07.070 [info] Application xp_sourceror started at :nonode@nohost
+22:40:07.070 [info] Application xp_forge started at :nonode@nohost
+22:40:07.070 [info] Application xp_logger_file_backend started at :nonode@nohost
+22:40:07.073 [info] Child :ttb_autostart of Supervisor :runtime_tools_sup started
+Pid: #PID<0.155.0>
+Start Call: :ttb_autostart.start_link()
+Restart: :temporary
+Shutdown: 3000
+Type: :worker
+22:40:07.073 [info] Application runtime_tools started at :nonode@nohost
+22:40:07.073 [info] Application et started at :nonode@nohost
+22:40:07.073 [info] Application observer started at :nonode@nohost
+22:40:07.073 [info] Application xp_path_glob started at :nonode@nohost
+22:40:07.077 [info] Child XPForge.Document.Store of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.159.0>
+Start Call: XPForge.Document.Store.start_link([derive: [analysis: &XPForge.Ast.analyze/1]])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:40:07.077 [info] Child XPExpert.ProjectSupervisor of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.160.0>
+Start Call: DynamicSupervisor.start_link([name: XPExpert.ProjectSupervisor, strategy: :one_for_one])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:40:07.077 [info] Child XPExpert.DynamicSupervisor of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.161.0>
+Start Call: DynamicSupervisor.start_link([name: XPExpert.DynamicSupervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:40:07.078 [info] Child XPGenLSP.Assigns of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.162.0>
+Start Call: XPGenLSP.Assigns.start_link([name: XPExpert.Assigns])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:40:07.078 [info] Child :expert_task_queue of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.163.0>
+Start Call: Task.Supervisor.start_link([name: :expert_task_queue])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:40:07.079 [info] Child XPGenLSP.Buffer of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.164.0>
+Start Call: XPGenLSP.Buffer.start_link([name: XPExpert.Buffer])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:40:07.079 [debug] [name: XPExpert, buffer: XPExpert.Buffer, task_supervisor: :expert_task_queue, dynamic_supervisor: XPExpert.DynamicSupervisor, assigns: XPExpert.Assigns]
+22:40:07.082 [info] Child XPExpert of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.165.0>
+Start Call: XPExpert.start_link([name: XPExpert, buffer: XPExpert.Buffer, task_supervisor: :expert_task_queue, dynamic_supervisor: XPExpert.DynamicSupervisor, assigns: XPExpert.Assigns])
+Restart: :permanent
+Shutdown: 500
+Type: :worker
+22:40:07.082 [info] Application xp_expert started at :nonode@nohost
+22:40:07.123 [info] Starting project at uri 
+22:40:07.125 [info] Engine initialized
+22:40:07.153 [debug] handled request client -> server initialize in 66ms
+22:40:07.158 [debug] sent request server -> client client/registerCapability
+22:40:07.169 [info] ################### opened file:///Users/christo/Work/elixir-in-action/todolist.ex
+22:40:07.169 [debug] handled notification client -> server textDocument/didOpen in 13ms
+22:40:07.170 [debug] handled notification client -> server initialized in 15ms
+22:40:07.171 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/document_symbols.ex:15: XPExpert.Provider.Handlers.DocumentSymbols.handle/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:94: XPExpert.handle_request/2
+    (xp_gen_lsp 0.11.1) lib/gen_lsp.ex:369: anonymous fn/2 in XPGenLSP.loop/3
+
+22:40:07.172 [debug] sent notification server -> client window/logMessage
+22:40:08.692 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/document_symbols.ex:15: XPExpert.Provider.Handlers.DocumentSymbols.handle/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:94: XPExpert.handle_request/2
+    (xp_gen_lsp 0.11.1) lib/gen_lsp.ex:369: anonymous fn/2 in XPGenLSP.loop/3
+
+22:40:08.692 [debug] sent notification server -> client window/logMessage
+22:41:56.685 [debug] sent notification server -> client window/logMessage
+22:41:56.685 [info] Shutting down
+22:41:56.685 [error] Writer crashed (:epipe)
+22:42:00.186 [debug] Child {XPLoggerFileBackend, :general_log} of Supervisor Logger.Backends.Supervisor started
+Pid: #PID<0.102.0>
+Start Call: Logger.Backends.Watcher.start_link({{XPLoggerFileBackend, :general_log}, {XPLoggerFileBackend, :general_log}})
+Restart: :transient
+Shutdown: 5000
+Type: :worker
+22:42:00.186 [info] Child Logger.Backends.Supervisor of Supervisor Logger.Backends.Internal started
+Pid: #PID<0.101.0>
+Start Call: Logger.Backends.Supervisor.start_link([{XPLoggerFileBackend, :general_log}])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:42:00.186 [info] Child Logger.Backends.Internal of Supervisor Logger.Supervisor started
+Pid: #PID<0.97.0>
+Start Call: Logger.Backends.Internal.start_link([])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:42:00.186 [info] Application logger started at :nonode@nohost
+22:42:00.186 [info] Application xp_mime started at :nonode@nohost
+22:42:00.186 [info] Application xp_hpax started at :nonode@nohost
+22:42:00.186 [info] Application crypto started at :nonode@nohost
+22:42:00.186 [info] Application asn1 started at :nonode@nohost
+22:42:00.186 [info] Application public_key started at :nonode@nohost
+22:42:00.188 [debug] Child :ssl_handler of Supervisor :logger_sup started
+Pid: #PID<0.107.0>
+Start Call: :logger_olp.start_link(:logger_std_h_ssl_handler, :logger_h_common, %{id: :ssl_handler, module: :logger_std_h, config: %{type: :standard_io, filesync_repeat_interval: :no_repeat}, level: :debug, filters: [], filter_default: :stop, formatter: {:ssl_logger, %{}}}, %{})
+Restart: :temporary
+Shutdown: 2000
+Type: :worker
+22:42:00.191 [info] Child :ssl_pem_cache of Supervisor :ssl_admin_sup started
+Pid: #PID<0.111.0>
+Start Call: :ssl_pem_cache.start_link([])
+Restart: :permanent
+Shutdown: 4000
+Type: :worker
+22:42:00.194 [info] Child :ssl_manager of Supervisor :ssl_admin_sup started
+Pid: #PID<0.112.0>
+Start Call: :ssl_manager.start_link([])
+Restart: :permanent
+Shutdown: 4000
+Type: :worker
+22:42:00.194 [info] Child :tls_client_ticket_store of Supervisor :ssl_admin_sup started
+Pid: #PID<0.113.0>
+Start Call: :tls_client_ticket_store.start_link(1000, 7200)
+Restart: :permanent
+Shutdown: 4000
+Type: :worker
+22:42:00.194 [info] Child :ssl_admin_sup of Supervisor :ssl_sup started
+Pid: #PID<0.110.0>
+Start Call: :ssl_admin_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:42:00.196 [info] Child :tls_connection_sup of Supervisor :tls_sup started
+Pid: #PID<0.116.0>
+Start Call: :tls_connection_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:42:00.197 [info] Child :ssl_listen_tracker_sup of Supervisor :tls_server_sup started
+Pid: #PID<0.118.0>
+Start Call: :ssl_listen_tracker_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:42:00.198 [info] Child :tls_server_session_ticket of Supervisor :tls_server_sup started
+Pid: #PID<0.119.0>
+Start Call: :tls_server_session_ticket_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:42:00.198 [info] Child :ssl_server_session_cache_sup of Supervisor :tls_server_sup started
+Pid: #PID<0.120.0>
+Start Call: :ssl_server_session_cache_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:42:00.199 [info] Child :ssl_upgrade_server_session_cache_sup of Supervisor :tls_server_sup started
+Pid: #PID<0.121.0>
+Start Call: :ssl_upgrade_server_session_cache_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:42:00.199 [info] Child :tls_server_sup of Supervisor :tls_sup started
+Pid: #PID<0.117.0>
+Start Call: :tls_server_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:42:00.199 [info] Child :tls_sup of Supervisor :ssl_connection_sup started
+Pid: #PID<0.115.0>
+Start Call: :tls_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:42:00.200 [info] Child :dtls_connection_sup of Supervisor :dtls_sup started
+Pid: #PID<0.123.0>
+Start Call: :dtls_connection_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:42:00.201 [info] Child :dtls_listener_sup of Supervisor :dtls_server_sup started
+Pid: #PID<0.125.0>
+Start Call: :dtls_listener_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:42:00.201 [info] Child :dtls_server_session_cache_sup of Supervisor :dtls_server_sup started
+Pid: #PID<0.126.0>
+Start Call: :dtls_server_session_cache_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:42:00.201 [info] Child :dtls_server_sup of Supervisor :dtls_sup started
+Pid: #PID<0.124.0>
+Start Call: :dtls_server_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:42:00.201 [info] Child :dtls_sup of Supervisor :ssl_connection_sup started
+Pid: #PID<0.122.0>
+Start Call: :dtls_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:42:00.201 [info] Child :ssl_connection_sup of Supervisor :ssl_sup started
+Pid: #PID<0.114.0>
+Start Call: :ssl_connection_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:42:00.201 [info] Application ssl started at :nonode@nohost
+22:42:00.202 [info] Application xp_mint started at :nonode@nohost
+22:42:00.202 [info] Application xp_nimble_options started at :nonode@nohost
+22:42:00.204 [info] Child XPNimblePool.TaskSupervisor of Supervisor #PID<0.132.0> (Supervisor.Default) started
+Pid: #PID<0.133.0>
+Start Call: Task.Supervisor.start_link([name: XPNimblePool.TaskSupervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:42:00.204 [info] Application xp_nimble_pool started at :nonode@nohost
+22:42:00.205 [info] Child :telemetry_handler_table of Supervisor :telemetry_sup started
+Pid: #PID<0.137.0>
+Start Call: :telemetry_handler_table.start_link()
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:42:00.205 [info] Application xp_telemetry started at :nonode@nohost
+22:42:00.205 [info] Application xp_finch started at :nonode@nohost
+22:42:00.219 [info] Child XPReq.Finch.PIDPartition0 of Supervisor XPReq.Finch started
+Pid: #PID<0.143.0>
+Start Call: Registry.Partition.start_link(XPReq.Finch.PIDPartition0, {:duplicate, XPReq.Finch, 0, 1, XPReq.Finch.KeyPartition0, XPReq.Finch.PIDPartition0, [], false})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:42:00.219 [info] Child XPReq.Finch of Supervisor XPReq.Finch.Supervisor started
+Pid: #PID<0.142.0>
+Start Call: Registry.start_link([keys: :duplicate, name: XPReq.Finch, meta: [config: %{pools: %{}, registry_name: XPReq.Finch, supervisor_name: XPReq.Finch.PoolSupervisor, manager_name: XPReq.Finch.PoolManager, default_pool_config: %{count: 1, size: 50, mod: XPFinch.HTTP1.Pool, conn_opts: [protocols: [:http1], transport_opts: [keepalive: true, nodelay: true, timeout: 5000], ssl_key_log_file_device: nil], pool_max_idle_time: :infinity, conn_max_idle_time: :infinity, start_pool_metrics?: false}}]])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:42:00.219 [info] Child XPReq.Finch.PoolSupervisor of Supervisor XPReq.Finch.Supervisor started
+Pid: #PID<0.144.0>
+Start Call: DynamicSupervisor.start_link([name: XPReq.Finch.PoolSupervisor, strategy: :one_for_one])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:42:00.219 [info] Child XPFinch.PoolManager of Supervisor XPReq.Finch.Supervisor started
+Pid: #PID<0.145.0>
+Start Call: XPFinch.PoolManager.start_link(%{pools: %{}, registry_name: XPReq.Finch, supervisor_name: XPReq.Finch.PoolSupervisor, manager_name: XPReq.Finch.PoolManager, default_pool_config: %{count: 1, size: 50, mod: XPFinch.HTTP1.Pool, conn_opts: [protocols: [:http1], transport_opts: [keepalive: true, nodelay: true, timeout: 5000], ssl_key_log_file_device: nil], pool_max_idle_time: :infinity, conn_max_idle_time: :infinity, start_pool_metrics?: false}})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:42:00.219 [info] Child XPReq.Finch of Supervisor #PID<0.140.0> (Supervisor.Default) started
+Pid: #PID<0.141.0>
+Start Call: XPFinch.start_link([name: XPReq.Finch, pools: %{default: [protocols: [:http1]]}])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:42:00.219 [info] Child XPReq.FinchSupervisor of Supervisor #PID<0.140.0> (Supervisor.Default) started
+Pid: #PID<0.146.0>
+Start Call: DynamicSupervisor.start_link([strategy: :one_for_one, name: XPReq.FinchSupervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:42:00.220 [info] Child XPReq.Test.Ownership of Supervisor #PID<0.140.0> (Supervisor.Default) started
+Pid: #PID<0.147.0>
+Start Call: XPReq.Test.Ownership.start_link([name: XPReq.Test.Ownership])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:42:00.220 [info] Application xp_req started at :nonode@nohost
+22:42:00.220 [info] Application burrito started at :nonode@nohost
+22:42:00.220 [info] Application erts started at :nonode@nohost
+22:42:00.220 [info] Application xp_schematic started at :nonode@nohost
+22:42:00.220 [info] Application xp_typed_struct started at :nonode@nohost
+22:42:00.220 [info] Application xp_gen_lsp started at :nonode@nohost
+22:42:00.227 [info] Child XPSnowflake.Generator of Supervisor #PID<0.150.0> (Supervisor.Default) started
+Pid: #PID<0.151.0>
+Start Call: XPSnowflake.Generator.start_link(0, 1023)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:42:00.227 [info] Application xp_snowflake started at :nonode@nohost
+22:42:00.227 [info] Application xp_sourceror started at :nonode@nohost
+22:42:00.227 [info] Application xp_forge started at :nonode@nohost
+22:42:00.227 [info] Application xp_logger_file_backend started at :nonode@nohost
+22:42:00.230 [info] Child :ttb_autostart of Supervisor :runtime_tools_sup started
+Pid: #PID<0.155.0>
+Start Call: :ttb_autostart.start_link()
+Restart: :temporary
+Shutdown: 3000
+Type: :worker
+22:42:00.230 [info] Application runtime_tools started at :nonode@nohost
+22:42:00.230 [info] Application et started at :nonode@nohost
+22:42:00.230 [info] Application observer started at :nonode@nohost
+22:42:00.230 [info] Application xp_path_glob started at :nonode@nohost
+22:42:00.236 [info] Child XPForge.Document.Store of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.159.0>
+Start Call: XPForge.Document.Store.start_link([derive: [analysis: &XPForge.Ast.analyze/1]])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:42:00.237 [info] Child XPExpert.ProjectSupervisor of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.160.0>
+Start Call: DynamicSupervisor.start_link([name: XPExpert.ProjectSupervisor, strategy: :one_for_one])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:42:00.237 [info] Child XPExpert.DynamicSupervisor of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.161.0>
+Start Call: DynamicSupervisor.start_link([name: XPExpert.DynamicSupervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:42:00.238 [info] Child XPGenLSP.Assigns of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.162.0>
+Start Call: XPGenLSP.Assigns.start_link([name: XPExpert.Assigns])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:42:00.238 [info] Child :expert_task_queue of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.163.0>
+Start Call: Task.Supervisor.start_link([name: :expert_task_queue])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:42:00.238 [info] Child XPGenLSP.Buffer of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.164.0>
+Start Call: XPGenLSP.Buffer.start_link([name: XPExpert.Buffer])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:42:00.238 [debug] [name: XPExpert, buffer: XPExpert.Buffer, task_supervisor: :expert_task_queue, dynamic_supervisor: XPExpert.DynamicSupervisor, assigns: XPExpert.Assigns]
+22:42:00.242 [info] Child XPExpert of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.165.0>
+Start Call: XPExpert.start_link([name: XPExpert, buffer: XPExpert.Buffer, task_supervisor: :expert_task_queue, dynamic_supervisor: XPExpert.DynamicSupervisor, assigns: XPExpert.Assigns])
+Restart: :permanent
+Shutdown: 500
+Type: :worker
+22:42:00.242 [info] Application xp_expert started at :nonode@nohost
+22:42:00.293 [info] Starting project at uri 
+22:42:00.297 [info] Engine initialized
+22:42:00.343 [debug] handled request client -> server initialize in 94ms
+22:42:00.348 [debug] sent request server -> client client/registerCapability
+22:42:00.360 [info] ################### opened file:///Users/christo/Work/elixir-in-action/todolist.ex
+22:42:00.360 [debug] handled notification client -> server textDocument/didOpen in 15ms
+22:42:00.364 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/document_symbols.ex:15: XPExpert.Provider.Handlers.DocumentSymbols.handle/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:94: XPExpert.handle_request/2
+    (xp_gen_lsp 0.11.1) lib/gen_lsp.ex:369: anonymous fn/2 in XPGenLSP.loop/3
+
+22:42:00.364 [debug] handled notification client -> server initialized in 19ms
+22:42:00.364 [debug] sent notification server -> client window/logMessage
+22:42:01.205 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/document_symbols.ex:15: XPExpert.Provider.Handlers.DocumentSymbols.handle/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:94: XPExpert.handle_request/2
+    (xp_gen_lsp 0.11.1) lib/gen_lsp.ex:369: anonymous fn/2 in XPGenLSP.loop/3
+
+22:42:01.205 [debug] sent notification server -> client window/logMessage
+22:42:01.892 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/document_symbols.ex:15: XPExpert.Provider.Handlers.DocumentSymbols.handle/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:94: XPExpert.handle_request/2
+    (xp_gen_lsp 0.11.1) lib/gen_lsp.ex:369: anonymous fn/2 in XPGenLSP.loop/3
+
+22:42:01.892 [debug] sent notification server -> client window/logMessage
+22:42:04.465 [debug] sent notification server -> client window/logMessage
+22:42:04.465 [info] Shutting down
+22:42:04.466 [error] ** (XPGenLSP.InvalidResponse) Invalid response for request shutdown.
+
+Response: {:ok, nil}
+Errors: "expected either null or a %XPGenLSP.ErrorResponse{}"
+
+22:42:04.466 [debug] handled request client -> server shutdown in 12ms
+22:53:01.514 [debug] Child {XPLoggerFileBackend, :general_log} of Supervisor Logger.Backends.Supervisor started
+Pid: #PID<0.102.0>
+Start Call: Logger.Backends.Watcher.start_link({{XPLoggerFileBackend, :general_log}, {XPLoggerFileBackend, :general_log}})
+Restart: :transient
+Shutdown: 5000
+Type: :worker
+22:53:01.514 [info] Child Logger.Backends.Supervisor of Supervisor Logger.Backends.Internal started
+Pid: #PID<0.101.0>
+Start Call: Logger.Backends.Supervisor.start_link([{XPLoggerFileBackend, :general_log}])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:53:01.514 [info] Child Logger.Backends.Internal of Supervisor Logger.Supervisor started
+Pid: #PID<0.97.0>
+Start Call: Logger.Backends.Internal.start_link([])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:53:01.514 [info] Application logger started at :nonode@nohost
+22:53:01.514 [info] Application xp_mime started at :nonode@nohost
+22:53:01.514 [info] Application xp_hpax started at :nonode@nohost
+22:53:01.514 [info] Application crypto started at :nonode@nohost
+22:53:01.514 [info] Application asn1 started at :nonode@nohost
+22:53:01.514 [info] Application public_key started at :nonode@nohost
+22:53:01.516 [debug] Child :ssl_handler of Supervisor :logger_sup started
+Pid: #PID<0.107.0>
+Start Call: :logger_olp.start_link(:logger_std_h_ssl_handler, :logger_h_common, %{id: :ssl_handler, module: :logger_std_h, config: %{type: :standard_io, filesync_repeat_interval: :no_repeat}, level: :debug, filter_default: :stop, filters: [], formatter: {:ssl_logger, %{}}}, %{})
+Restart: :temporary
+Shutdown: 2000
+Type: :worker
+22:53:01.519 [info] Child :ssl_pem_cache of Supervisor :ssl_admin_sup started
+Pid: #PID<0.111.0>
+Start Call: :ssl_pem_cache.start_link([])
+Restart: :permanent
+Shutdown: 4000
+Type: :worker
+22:53:01.521 [info] Child :ssl_manager of Supervisor :ssl_admin_sup started
+Pid: #PID<0.112.0>
+Start Call: :ssl_manager.start_link([])
+Restart: :permanent
+Shutdown: 4000
+Type: :worker
+22:53:01.522 [info] Child :tls_client_ticket_store of Supervisor :ssl_admin_sup started
+Pid: #PID<0.113.0>
+Start Call: :tls_client_ticket_store.start_link(1000, 7200)
+Restart: :permanent
+Shutdown: 4000
+Type: :worker
+22:53:01.522 [info] Child :ssl_admin_sup of Supervisor :ssl_sup started
+Pid: #PID<0.110.0>
+Start Call: :ssl_admin_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:53:01.524 [info] Child :tls_connection_sup of Supervisor :tls_sup started
+Pid: #PID<0.116.0>
+Start Call: :tls_connection_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:53:01.525 [info] Child :ssl_listen_tracker_sup of Supervisor :tls_server_sup started
+Pid: #PID<0.118.0>
+Start Call: :ssl_listen_tracker_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:53:01.525 [info] Child :tls_server_session_ticket of Supervisor :tls_server_sup started
+Pid: #PID<0.119.0>
+Start Call: :tls_server_session_ticket_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:53:01.526 [info] Child :ssl_server_session_cache_sup of Supervisor :tls_server_sup started
+Pid: #PID<0.120.0>
+Start Call: :ssl_server_session_cache_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:53:01.526 [info] Child :ssl_upgrade_server_session_cache_sup of Supervisor :tls_server_sup started
+Pid: #PID<0.121.0>
+Start Call: :ssl_upgrade_server_session_cache_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:53:01.526 [info] Child :tls_server_sup of Supervisor :tls_sup started
+Pid: #PID<0.117.0>
+Start Call: :tls_server_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:53:01.526 [info] Child :tls_sup of Supervisor :ssl_connection_sup started
+Pid: #PID<0.115.0>
+Start Call: :tls_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:53:01.527 [info] Child :dtls_connection_sup of Supervisor :dtls_sup started
+Pid: #PID<0.123.0>
+Start Call: :dtls_connection_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:53:01.528 [info] Child :dtls_listener_sup of Supervisor :dtls_server_sup started
+Pid: #PID<0.125.0>
+Start Call: :dtls_listener_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:53:01.528 [info] Child :dtls_server_session_cache_sup of Supervisor :dtls_server_sup started
+Pid: #PID<0.126.0>
+Start Call: :dtls_server_session_cache_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:53:01.528 [info] Child :dtls_server_sup of Supervisor :dtls_sup started
+Pid: #PID<0.124.0>
+Start Call: :dtls_server_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:53:01.528 [info] Child :dtls_sup of Supervisor :ssl_connection_sup started
+Pid: #PID<0.122.0>
+Start Call: :dtls_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:53:01.528 [info] Child :ssl_connection_sup of Supervisor :ssl_sup started
+Pid: #PID<0.114.0>
+Start Call: :ssl_connection_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:53:01.528 [info] Application ssl started at :nonode@nohost
+22:53:01.529 [info] Application xp_mint started at :nonode@nohost
+22:53:01.529 [info] Application xp_nimble_options started at :nonode@nohost
+22:53:01.531 [info] Child XPNimblePool.TaskSupervisor of Supervisor #PID<0.132.0> (Supervisor.Default) started
+Pid: #PID<0.133.0>
+Start Call: Task.Supervisor.start_link([name: XPNimblePool.TaskSupervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:53:01.531 [info] Application xp_nimble_pool started at :nonode@nohost
+22:53:01.533 [info] Child :telemetry_handler_table of Supervisor :telemetry_sup started
+Pid: #PID<0.137.0>
+Start Call: :telemetry_handler_table.start_link()
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:53:01.533 [info] Application xp_telemetry started at :nonode@nohost
+22:53:01.533 [info] Application xp_finch started at :nonode@nohost
+22:53:01.548 [info] Child XPReq.Finch.PIDPartition0 of Supervisor XPReq.Finch started
+Pid: #PID<0.143.0>
+Start Call: Registry.Partition.start_link(XPReq.Finch.PIDPartition0, {:duplicate, XPReq.Finch, 0, 1, XPReq.Finch.KeyPartition0, XPReq.Finch.PIDPartition0, [], false})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:53:01.548 [info] Child XPReq.Finch of Supervisor XPReq.Finch.Supervisor started
+Pid: #PID<0.142.0>
+Start Call: Registry.start_link([keys: :duplicate, name: XPReq.Finch, meta: [config: %{pools: %{}, registry_name: XPReq.Finch, supervisor_name: XPReq.Finch.PoolSupervisor, manager_name: XPReq.Finch.PoolManager, default_pool_config: %{count: 1, size: 50, mod: XPFinch.HTTP1.Pool, conn_opts: [protocols: [:http1], transport_opts: [keepalive: true, nodelay: true, timeout: 5000], ssl_key_log_file_device: nil], pool_max_idle_time: :infinity, conn_max_idle_time: :infinity, start_pool_metrics?: false}}]])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:53:01.548 [info] Child XPReq.Finch.PoolSupervisor of Supervisor XPReq.Finch.Supervisor started
+Pid: #PID<0.144.0>
+Start Call: DynamicSupervisor.start_link([name: XPReq.Finch.PoolSupervisor, strategy: :one_for_one])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:53:01.548 [info] Child XPFinch.PoolManager of Supervisor XPReq.Finch.Supervisor started
+Pid: #PID<0.145.0>
+Start Call: XPFinch.PoolManager.start_link(%{pools: %{}, registry_name: XPReq.Finch, supervisor_name: XPReq.Finch.PoolSupervisor, manager_name: XPReq.Finch.PoolManager, default_pool_config: %{count: 1, size: 50, mod: XPFinch.HTTP1.Pool, conn_opts: [protocols: [:http1], transport_opts: [keepalive: true, nodelay: true, timeout: 5000], ssl_key_log_file_device: nil], pool_max_idle_time: :infinity, conn_max_idle_time: :infinity, start_pool_metrics?: false}})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:53:01.548 [info] Child XPReq.Finch of Supervisor #PID<0.140.0> (Supervisor.Default) started
+Pid: #PID<0.141.0>
+Start Call: XPFinch.start_link([name: XPReq.Finch, pools: %{default: [protocols: [:http1]]}])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:53:01.548 [info] Child XPReq.FinchSupervisor of Supervisor #PID<0.140.0> (Supervisor.Default) started
+Pid: #PID<0.146.0>
+Start Call: DynamicSupervisor.start_link([strategy: :one_for_one, name: XPReq.FinchSupervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:53:01.548 [info] Child XPReq.Test.Ownership of Supervisor #PID<0.140.0> (Supervisor.Default) started
+Pid: #PID<0.147.0>
+Start Call: XPReq.Test.Ownership.start_link([name: XPReq.Test.Ownership])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:53:01.548 [info] Application xp_req started at :nonode@nohost
+22:53:01.548 [info] Application burrito started at :nonode@nohost
+22:53:01.548 [info] Application erts started at :nonode@nohost
+22:53:01.548 [info] Application xp_schematic started at :nonode@nohost
+22:53:01.548 [info] Application xp_typed_struct started at :nonode@nohost
+22:53:01.548 [info] Application xp_gen_lsp started at :nonode@nohost
+22:53:01.555 [info] Child XPSnowflake.Generator of Supervisor #PID<0.150.0> (Supervisor.Default) started
+Pid: #PID<0.151.0>
+Start Call: XPSnowflake.Generator.start_link(0, 1023)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:53:01.555 [info] Application xp_snowflake started at :nonode@nohost
+22:53:01.555 [info] Application xp_sourceror started at :nonode@nohost
+22:53:01.555 [info] Application xp_forge started at :nonode@nohost
+22:53:01.555 [info] Application xp_logger_file_backend started at :nonode@nohost
+22:53:01.558 [info] Child :ttb_autostart of Supervisor :runtime_tools_sup started
+Pid: #PID<0.155.0>
+Start Call: :ttb_autostart.start_link()
+Restart: :temporary
+Shutdown: 3000
+Type: :worker
+22:53:01.558 [info] Application runtime_tools started at :nonode@nohost
+22:53:01.558 [info] Application et started at :nonode@nohost
+22:53:01.558 [info] Application observer started at :nonode@nohost
+22:53:01.558 [info] Application xp_path_glob started at :nonode@nohost
+22:53:01.563 [info] Child XPForge.Document.Store of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.159.0>
+Start Call: XPForge.Document.Store.start_link([derive: [analysis: &XPForge.Ast.analyze/1]])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:53:01.564 [info] Child XPExpert.ProjectSupervisor of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.160.0>
+Start Call: DynamicSupervisor.start_link([name: XPExpert.ProjectSupervisor, strategy: :one_for_one])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:53:01.564 [info] Child XPExpert.DynamicSupervisor of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.161.0>
+Start Call: DynamicSupervisor.start_link([name: XPExpert.DynamicSupervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:53:01.565 [info] Child XPGenLSP.Assigns of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.162.0>
+Start Call: XPGenLSP.Assigns.start_link([name: XPExpert.Assigns])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:53:01.565 [info] Child :expert_task_queue of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.163.0>
+Start Call: Task.Supervisor.start_link([name: :expert_task_queue])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:53:01.566 [info] Child XPGenLSP.Buffer of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.164.0>
+Start Call: XPGenLSP.Buffer.start_link([name: XPExpert.Buffer])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:53:01.566 [debug] [name: XPExpert, buffer: XPExpert.Buffer, task_supervisor: :expert_task_queue, dynamic_supervisor: XPExpert.DynamicSupervisor, assigns: XPExpert.Assigns]
+22:53:01.569 [info] Child XPExpert of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.165.0>
+Start Call: XPExpert.start_link([name: XPExpert, buffer: XPExpert.Buffer, task_supervisor: :expert_task_queue, dynamic_supervisor: XPExpert.DynamicSupervisor, assigns: XPExpert.Assigns])
+Restart: :permanent
+Shutdown: 500
+Type: :worker
+22:53:01.570 [info] Application xp_expert started at :nonode@nohost
+22:53:01.623 [info] Starting project at uri 
+22:53:01.626 [info] Engine initialized
+22:53:01.661 [debug] handled request client -> server initialize in 85ms
+22:53:01.667 [debug] sent request server -> client client/registerCapability
+22:53:01.681 [info] ################### opened file:///Users/christo/Work/elixir-in-action/todolist.ex
+22:53:01.681 [debug] handled notification client -> server textDocument/didOpen in 17ms
+22:53:01.684 [debug] handled notification client -> server initialized in 21ms
+22:53:01.685 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/document_symbols.ex:15: XPExpert.Provider.Handlers.DocumentSymbols.handle/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:94: XPExpert.handle_request/2
+    (xp_gen_lsp 0.11.1) lib/gen_lsp.ex:369: anonymous fn/2 in XPGenLSP.loop/3
+
+22:53:01.686 [debug] sent notification server -> client window/logMessage
+22:53:03.274 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/document_symbols.ex:15: XPExpert.Provider.Handlers.DocumentSymbols.handle/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:94: XPExpert.handle_request/2
+    (xp_gen_lsp 0.11.1) lib/gen_lsp.ex:369: anonymous fn/2 in XPGenLSP.loop/3
+
+22:53:03.274 [debug] sent notification server -> client window/logMessage
+22:53:07.019 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:07.019 [debug] sent notification server -> client window/logMessage
+22:53:07.019 [warning] client -> server notification crashed
+22:53:07.642 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:07.642 [debug] sent notification server -> client window/logMessage
+22:53:07.642 [warning] client -> server notification crashed
+22:53:07.716 [info] Completion for XpPos<<2, 4>>
+22:53:07.716 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:84: XPExpert.CodeIntelligence.Completion.completions/3
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:36: XPExpert.CodeIntelligence.Completion.complete/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/completion.ex:21: XPExpert.Provider.Handlers.Completion.handle/2
+
+22:53:07.716 [debug] sent notification server -> client window/logMessage
+22:53:07.769 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:07.769 [debug] sent notification server -> client window/logMessage
+22:53:07.769 [warning] client -> server notification crashed
+22:53:07.772 [info] Completion for XpPos<<2, 5>>
+22:53:07.773 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:84: XPExpert.CodeIntelligence.Completion.completions/3
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:36: XPExpert.CodeIntelligence.Completion.complete/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/completion.ex:21: XPExpert.Provider.Handlers.Completion.handle/2
+
+22:53:07.773 [debug] sent notification server -> client window/logMessage
+22:53:07.835 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:07.835 [debug] sent notification server -> client window/logMessage
+22:53:07.835 [warning] client -> server notification crashed
+22:53:07.835 [info] Completion for XpPos<<2, 6>>
+22:53:07.835 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:84: XPExpert.CodeIntelligence.Completion.completions/3
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:36: XPExpert.CodeIntelligence.Completion.complete/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/completion.ex:21: XPExpert.Provider.Handlers.Completion.handle/2
+
+22:53:07.835 [debug] sent notification server -> client window/logMessage
+22:53:07.944 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:07.944 [debug] sent notification server -> client window/logMessage
+22:53:07.944 [warning] client -> server notification crashed
+22:53:07.945 [info] Completion for XpPos<<2, 7>>
+22:53:07.945 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:84: XPExpert.CodeIntelligence.Completion.completions/3
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:36: XPExpert.CodeIntelligence.Completion.complete/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/completion.ex:21: XPExpert.Provider.Handlers.Completion.handle/2
+
+22:53:07.945 [debug] sent notification server -> client window/logMessage
+22:53:08.279 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:08.279 [debug] sent notification server -> client window/logMessage
+22:53:08.279 [warning] client -> server notification crashed
+22:53:08.280 [info] Completion for XpPos<<2, 6>>
+22:53:08.281 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:84: XPExpert.CodeIntelligence.Completion.completions/3
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:36: XPExpert.CodeIntelligence.Completion.complete/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/completion.ex:21: XPExpert.Provider.Handlers.Completion.handle/2
+
+22:53:08.281 [debug] sent notification server -> client window/logMessage
+22:53:08.393 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:08.393 [debug] sent notification server -> client window/logMessage
+22:53:08.393 [warning] client -> server notification crashed
+22:53:08.394 [info] Completion for XpPos<<2, 5>>
+22:53:08.394 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:84: XPExpert.CodeIntelligence.Completion.completions/3
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:36: XPExpert.CodeIntelligence.Completion.complete/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/completion.ex:21: XPExpert.Provider.Handlers.Completion.handle/2
+
+22:53:08.394 [debug] sent notification server -> client window/logMessage
+22:53:08.510 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:08.510 [debug] sent notification server -> client window/logMessage
+22:53:08.510 [warning] client -> server notification crashed
+22:53:08.510 [info] Completion for XpPos<<2, 4>>
+22:53:08.510 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:84: XPExpert.CodeIntelligence.Completion.completions/3
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:36: XPExpert.CodeIntelligence.Completion.complete/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/completion.ex:21: XPExpert.Provider.Handlers.Completion.handle/2
+
+22:53:08.510 [debug] sent notification server -> client window/logMessage
+22:53:08.661 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:08.661 [debug] sent notification server -> client window/logMessage
+22:53:08.661 [warning] client -> server notification crashed
+22:53:08.822 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:08.822 [debug] sent notification server -> client window/logMessage
+22:53:08.822 [warning] client -> server notification crashed
+22:53:08.823 [info] Completion for XpPos<<2, 4>>
+22:53:08.824 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:84: XPExpert.CodeIntelligence.Completion.completions/3
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:36: XPExpert.CodeIntelligence.Completion.complete/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/completion.ex:21: XPExpert.Provider.Handlers.Completion.handle/2
+
+22:53:08.824 [debug] sent notification server -> client window/logMessage
+22:53:08.970 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:08.970 [debug] sent notification server -> client window/logMessage
+22:53:08.970 [warning] client -> server notification crashed
+22:53:08.970 [info] Completion for XpPos<<2, 5>>
+22:53:08.971 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:84: XPExpert.CodeIntelligence.Completion.completions/3
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:36: XPExpert.CodeIntelligence.Completion.complete/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/completion.ex:21: XPExpert.Provider.Handlers.Completion.handle/2
+
+22:53:08.971 [debug] sent notification server -> client window/logMessage
+22:53:09.026 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:09.026 [debug] sent notification server -> client window/logMessage
+22:53:09.026 [warning] client -> server notification crashed
+22:53:09.026 [info] Completion for XpPos<<2, 6>>
+22:53:09.027 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:84: XPExpert.CodeIntelligence.Completion.completions/3
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:36: XPExpert.CodeIntelligence.Completion.complete/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/completion.ex:21: XPExpert.Provider.Handlers.Completion.handle/2
+
+22:53:09.027 [debug] sent notification server -> client window/logMessage
+22:53:09.356 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:09.356 [debug] sent notification server -> client window/logMessage
+22:53:09.356 [warning] client -> server notification crashed
+22:53:09.629 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:09.629 [debug] sent notification server -> client window/logMessage
+22:53:09.629 [warning] client -> server notification crashed
+22:53:09.631 [info] Completion for XpPos<<2, 8>>
+22:53:09.631 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:84: XPExpert.CodeIntelligence.Completion.completions/3
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:36: XPExpert.CodeIntelligence.Completion.complete/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/completion.ex:21: XPExpert.Provider.Handlers.Completion.handle/2
+
+22:53:09.631 [debug] sent notification server -> client window/logMessage
+22:53:09.690 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:09.690 [debug] sent notification server -> client window/logMessage
+22:53:09.690 [warning] client -> server notification crashed
+22:53:09.690 [info] Completion for XpPos<<2, 9>>
+22:53:09.690 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:84: XPExpert.CodeIntelligence.Completion.completions/3
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:36: XPExpert.CodeIntelligence.Completion.complete/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/completion.ex:21: XPExpert.Provider.Handlers.Completion.handle/2
+
+22:53:09.690 [debug] sent notification server -> client window/logMessage
+22:53:09.790 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:09.790 [debug] sent notification server -> client window/logMessage
+22:53:09.790 [warning] client -> server notification crashed
+22:53:09.791 [info] Completion for XpPos<<2, 10>>
+22:53:09.791 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:84: XPExpert.CodeIntelligence.Completion.completions/3
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:36: XPExpert.CodeIntelligence.Completion.complete/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/completion.ex:21: XPExpert.Provider.Handlers.Completion.handle/2
+
+22:53:09.791 [debug] sent notification server -> client window/logMessage
+22:53:09.871 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:09.871 [debug] sent notification server -> client window/logMessage
+22:53:09.871 [warning] client -> server notification crashed
+22:53:09.871 [info] Completion for XpPos<<2, 11>>
+22:53:09.871 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:84: XPExpert.CodeIntelligence.Completion.completions/3
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:36: XPExpert.CodeIntelligence.Completion.complete/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/completion.ex:21: XPExpert.Provider.Handlers.Completion.handle/2
+
+22:53:09.871 [debug] sent notification server -> client window/logMessage
+22:53:10.903 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:10.903 [debug] sent notification server -> client window/logMessage
+22:53:10.903 [warning] client -> server notification crashed
+22:53:10.907 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:10.907 [debug] sent notification server -> client window/logMessage
+22:53:10.907 [warning] client -> server notification crashed
+22:53:12.744 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:12.744 [debug] sent notification server -> client window/logMessage
+22:53:12.744 [warning] client -> server notification crashed
+22:53:12.831 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:12.831 [debug] sent notification server -> client window/logMessage
+22:53:12.832 [warning] client -> server notification crashed
+22:53:12.840 [info] Emitting Completions: [:do/end block ]
+22:53:12.847 [debug] handled request client -> server textDocument/completion in 16ms
+22:53:12.914 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:12.914 [debug] sent notification server -> client window/logMessage
+22:53:12.914 [warning] client -> server notification crashed
+22:53:13.245 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:13.245 [debug] sent notification server -> client window/logMessage
+22:53:13.245 [warning] client -> server notification crashed
+22:53:13.247 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:13.247 [debug] sent notification server -> client window/logMessage
+22:53:13.247 [warning] client -> server notification crashed
+22:53:16.327 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:16.327 [debug] sent notification server -> client window/logMessage
+22:53:16.327 [warning] client -> server notification crashed
+22:53:16.328 [info] Completion for XpPos<<3, 6>>
+22:53:16.329 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:84: XPExpert.CodeIntelligence.Completion.completions/3
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:36: XPExpert.CodeIntelligence.Completion.complete/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/completion.ex:21: XPExpert.Provider.Handlers.Completion.handle/2
+
+22:53:16.329 [debug] sent notification server -> client window/logMessage
+22:53:16.476 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:16.476 [debug] sent notification server -> client window/logMessage
+22:53:16.476 [warning] client -> server notification crashed
+22:53:18.128 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:18.128 [debug] sent notification server -> client window/logMessage
+22:53:18.128 [warning] client -> server notification crashed
+22:53:18.278 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:18.278 [debug] sent notification server -> client window/logMessage
+22:53:18.278 [warning] client -> server notification crashed
+22:53:18.427 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:18.427 [debug] sent notification server -> client window/logMessage
+22:53:18.427 [warning] client -> server notification crashed
+22:53:18.578 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:18.578 [debug] sent notification server -> client window/logMessage
+22:53:18.578 [warning] client -> server notification crashed
+22:53:18.726 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:18.726 [debug] sent notification server -> client window/logMessage
+22:53:18.726 [warning] client -> server notification crashed
+22:53:18.877 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:18.877 [debug] sent notification server -> client window/logMessage
+22:53:18.877 [warning] client -> server notification crashed
+22:53:19.027 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:19.027 [debug] sent notification server -> client window/logMessage
+22:53:19.027 [warning] client -> server notification crashed
+22:53:19.176 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:19.176 [debug] sent notification server -> client window/logMessage
+22:53:19.176 [warning] client -> server notification crashed
+22:53:19.325 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:19.325 [debug] sent notification server -> client window/logMessage
+22:53:19.325 [warning] client -> server notification crashed
+22:53:19.475 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:19.475 [debug] sent notification server -> client window/logMessage
+22:53:19.475 [warning] client -> server notification crashed
+22:53:19.625 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:19.625 [debug] sent notification server -> client window/logMessage
+22:53:19.625 [warning] client -> server notification crashed
+22:53:19.775 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:19.775 [debug] sent notification server -> client window/logMessage
+22:53:19.775 [warning] client -> server notification crashed
+22:53:19.926 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:19.926 [debug] sent notification server -> client window/logMessage
+22:53:19.926 [warning] client -> server notification crashed
+22:53:20.877 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:20.877 [debug] sent notification server -> client window/logMessage
+22:53:20.877 [warning] client -> server notification crashed
+22:53:21.036 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:21.036 [debug] sent notification server -> client window/logMessage
+22:53:21.036 [warning] client -> server notification crashed
+22:53:21.162 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:21.162 [debug] sent notification server -> client window/logMessage
+22:53:21.162 [warning] client -> server notification crashed
+22:53:21.163 [info] Emitting Completions: [:do/end block ]
+22:53:21.163 [debug] handled request client -> server textDocument/completion in 1ms
+22:53:21.310 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:21.310 [debug] sent notification server -> client window/logMessage
+22:53:21.310 [warning] client -> server notification crashed
+22:53:21.626 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:21.626 [debug] sent notification server -> client window/logMessage
+22:53:21.626 [warning] client -> server notification crashed
+22:53:21.628 [info] Emitting Completions: []
+22:53:21.628 [debug] handled request client -> server textDocument/completion in 1ms
+22:53:21.774 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:21.774 [debug] sent notification server -> client window/logMessage
+22:53:21.774 [warning] client -> server notification crashed
+22:53:22.424 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:22.424 [debug] sent notification server -> client window/logMessage
+22:53:22.424 [warning] client -> server notification crashed
+22:53:22.427 [info] Completion for XpPos<<2, 20>>
+22:53:22.427 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:84: XPExpert.CodeIntelligence.Completion.completions/3
+    (xp_expert 0.1.0-5dacce4) lib/expert/code_intelligence/completion.ex:36: XPExpert.CodeIntelligence.Completion.complete/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/completion.ex:21: XPExpert.Provider.Handlers.Completion.handle/2
+
+22:53:22.427 [debug] sent notification server -> client window/logMessage
+22:53:22.581 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:22.581 [debug] sent notification server -> client window/logMessage
+22:53:22.581 [warning] client -> server notification crashed
+22:53:22.583 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:22.583 [debug] sent notification server -> client window/logMessage
+22:53:22.583 [warning] client -> server notification crashed
+22:53:23.664 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/document_symbols.ex:15: XPExpert.Provider.Handlers.DocumentSymbols.handle/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:94: XPExpert.handle_request/2
+    (xp_gen_lsp 0.11.1) lib/gen_lsp.ex:369: anonymous fn/2 in XPGenLSP.loop/3
+
+22:53:23.664 [debug] sent notification server -> client window/logMessage
+22:53:25.667 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/formatting.ex:16: XPExpert.Provider.Handlers.Formatting.handle/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:94: XPExpert.handle_request/2
+    (xp_gen_lsp 0.11.1) lib/gen_lsp.ex:369: anonymous fn/2 in XPGenLSP.loop/3
+
+22:53:25.667 [debug] sent notification server -> client window/logMessage
+22:53:25.683 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:171: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:53:25.683 [debug] sent notification server -> client window/logMessage
+22:53:25.683 [warning] client -> server notification crashed
+22:53:25.686 [debug] sent notification server -> client window/logMessage
+22:53:25.686 [info] Shutting down
+22:53:25.687 [error] ** (XPGenLSP.InvalidResponse) Invalid response for request shutdown.
+
+Response: {:ok, nil}
+Errors: "expected either null or a %XPGenLSP.ErrorResponse{}"
+
+22:53:25.687 [debug] handled request client -> server shutdown in 8ms
+22:53:25.688 [info] SIGTERM received - shutting down
+
+22:54:11.878 [debug] Child {XPLoggerFileBackend, :general_log} of Supervisor Logger.Backends.Supervisor started
+Pid: #PID<0.102.0>
+Start Call: Logger.Backends.Watcher.start_link({{XPLoggerFileBackend, :general_log}, {XPLoggerFileBackend, :general_log}})
+Restart: :transient
+Shutdown: 5000
+Type: :worker
+22:54:11.878 [info] Child Logger.Backends.Supervisor of Supervisor Logger.Backends.Internal started
+Pid: #PID<0.101.0>
+Start Call: Logger.Backends.Supervisor.start_link([{XPLoggerFileBackend, :general_log}])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:54:11.878 [info] Child Logger.Backends.Internal of Supervisor Logger.Supervisor started
+Pid: #PID<0.97.0>
+Start Call: Logger.Backends.Internal.start_link([])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:54:11.878 [info] Application logger started at :nonode@nohost
+22:54:11.878 [info] Application xp_mime started at :nonode@nohost
+22:54:11.878 [info] Application xp_hpax started at :nonode@nohost
+22:54:11.878 [info] Application crypto started at :nonode@nohost
+22:54:11.878 [info] Application asn1 started at :nonode@nohost
+22:54:11.878 [info] Application public_key started at :nonode@nohost
+22:54:11.880 [debug] Child :ssl_handler of Supervisor :logger_sup started
+Pid: #PID<0.107.0>
+Start Call: :logger_olp.start_link(:logger_std_h_ssl_handler, :logger_h_common, %{id: :ssl_handler, module: :logger_std_h, config: %{type: :standard_io, filesync_repeat_interval: :no_repeat}, level: :debug, filter_default: :stop, filters: [], formatter: {:ssl_logger, %{}}}, %{})
+Restart: :temporary
+Shutdown: 2000
+Type: :worker
+22:54:11.882 [info] Child :ssl_pem_cache of Supervisor :ssl_admin_sup started
+Pid: #PID<0.111.0>
+Start Call: :ssl_pem_cache.start_link([])
+Restart: :permanent
+Shutdown: 4000
+Type: :worker
+22:54:11.885 [info] Child :ssl_manager of Supervisor :ssl_admin_sup started
+Pid: #PID<0.112.0>
+Start Call: :ssl_manager.start_link([])
+Restart: :permanent
+Shutdown: 4000
+Type: :worker
+22:54:11.885 [info] Child :tls_client_ticket_store of Supervisor :ssl_admin_sup started
+Pid: #PID<0.113.0>
+Start Call: :tls_client_ticket_store.start_link(1000, 7200)
+Restart: :permanent
+Shutdown: 4000
+Type: :worker
+22:54:11.885 [info] Child :ssl_admin_sup of Supervisor :ssl_sup started
+Pid: #PID<0.110.0>
+Start Call: :ssl_admin_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:54:11.887 [info] Child :tls_connection_sup of Supervisor :tls_sup started
+Pid: #PID<0.116.0>
+Start Call: :tls_connection_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:54:11.888 [info] Child :ssl_listen_tracker_sup of Supervisor :tls_server_sup started
+Pid: #PID<0.118.0>
+Start Call: :ssl_listen_tracker_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:54:11.888 [info] Child :tls_server_session_ticket of Supervisor :tls_server_sup started
+Pid: #PID<0.119.0>
+Start Call: :tls_server_session_ticket_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:54:11.889 [info] Child :ssl_server_session_cache_sup of Supervisor :tls_server_sup started
+Pid: #PID<0.120.0>
+Start Call: :ssl_server_session_cache_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:54:11.890 [info] Child :ssl_upgrade_server_session_cache_sup of Supervisor :tls_server_sup started
+Pid: #PID<0.121.0>
+Start Call: :ssl_upgrade_server_session_cache_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:54:11.890 [info] Child :tls_server_sup of Supervisor :tls_sup started
+Pid: #PID<0.117.0>
+Start Call: :tls_server_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:54:11.890 [info] Child :tls_sup of Supervisor :ssl_connection_sup started
+Pid: #PID<0.115.0>
+Start Call: :tls_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:54:11.890 [info] Child :dtls_connection_sup of Supervisor :dtls_sup started
+Pid: #PID<0.123.0>
+Start Call: :dtls_connection_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:54:11.891 [info] Child :dtls_listener_sup of Supervisor :dtls_server_sup started
+Pid: #PID<0.125.0>
+Start Call: :dtls_listener_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:54:11.891 [info] Child :dtls_server_session_cache_sup of Supervisor :dtls_server_sup started
+Pid: #PID<0.126.0>
+Start Call: :dtls_server_session_cache_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:54:11.891 [info] Child :dtls_server_sup of Supervisor :dtls_sup started
+Pid: #PID<0.124.0>
+Start Call: :dtls_server_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:54:11.891 [info] Child :dtls_sup of Supervisor :ssl_connection_sup started
+Pid: #PID<0.122.0>
+Start Call: :dtls_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:54:11.891 [info] Child :ssl_connection_sup of Supervisor :ssl_sup started
+Pid: #PID<0.114.0>
+Start Call: :ssl_connection_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+22:54:11.892 [info] Application ssl started at :nonode@nohost
+22:54:11.892 [info] Application xp_mint started at :nonode@nohost
+22:54:11.892 [info] Application xp_nimble_options started at :nonode@nohost
+22:54:11.895 [info] Child XPNimblePool.TaskSupervisor of Supervisor #PID<0.132.0> (Supervisor.Default) started
+Pid: #PID<0.133.0>
+Start Call: Task.Supervisor.start_link([name: XPNimblePool.TaskSupervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:54:11.895 [info] Application xp_nimble_pool started at :nonode@nohost
+22:54:11.896 [info] Child :telemetry_handler_table of Supervisor :telemetry_sup started
+Pid: #PID<0.137.0>
+Start Call: :telemetry_handler_table.start_link()
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:54:11.896 [info] Application xp_telemetry started at :nonode@nohost
+22:54:11.896 [info] Application xp_finch started at :nonode@nohost
+22:54:11.910 [info] Child XPReq.Finch.PIDPartition0 of Supervisor XPReq.Finch started
+Pid: #PID<0.143.0>
+Start Call: Registry.Partition.start_link(XPReq.Finch.PIDPartition0, {:duplicate, XPReq.Finch, 0, 1, XPReq.Finch.KeyPartition0, XPReq.Finch.PIDPartition0, [], false})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:54:11.910 [info] Child XPReq.Finch of Supervisor XPReq.Finch.Supervisor started
+Pid: #PID<0.142.0>
+Start Call: Registry.start_link([keys: :duplicate, name: XPReq.Finch, meta: [config: %{pools: %{}, registry_name: XPReq.Finch, supervisor_name: XPReq.Finch.PoolSupervisor, manager_name: XPReq.Finch.PoolManager, default_pool_config: %{count: 1, size: 50, mod: XPFinch.HTTP1.Pool, conn_opts: [protocols: [:http1], transport_opts: [keepalive: true, nodelay: true, timeout: 5000], ssl_key_log_file_device: nil], pool_max_idle_time: :infinity, conn_max_idle_time: :infinity, start_pool_metrics?: false}}]])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:54:11.910 [info] Child XPReq.Finch.PoolSupervisor of Supervisor XPReq.Finch.Supervisor started
+Pid: #PID<0.144.0>
+Start Call: DynamicSupervisor.start_link([name: XPReq.Finch.PoolSupervisor, strategy: :one_for_one])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:54:11.910 [info] Child XPFinch.PoolManager of Supervisor XPReq.Finch.Supervisor started
+Pid: #PID<0.145.0>
+Start Call: XPFinch.PoolManager.start_link(%{pools: %{}, registry_name: XPReq.Finch, supervisor_name: XPReq.Finch.PoolSupervisor, manager_name: XPReq.Finch.PoolManager, default_pool_config: %{count: 1, size: 50, mod: XPFinch.HTTP1.Pool, conn_opts: [protocols: [:http1], transport_opts: [keepalive: true, nodelay: true, timeout: 5000], ssl_key_log_file_device: nil], pool_max_idle_time: :infinity, conn_max_idle_time: :infinity, start_pool_metrics?: false}})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:54:11.910 [info] Child XPReq.Finch of Supervisor #PID<0.140.0> (Supervisor.Default) started
+Pid: #PID<0.141.0>
+Start Call: XPFinch.start_link([name: XPReq.Finch, pools: %{default: [protocols: [:http1]]}])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:54:11.910 [info] Child XPReq.FinchSupervisor of Supervisor #PID<0.140.0> (Supervisor.Default) started
+Pid: #PID<0.146.0>
+Start Call: DynamicSupervisor.start_link([strategy: :one_for_one, name: XPReq.FinchSupervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:54:11.910 [info] Child XPReq.Test.Ownership of Supervisor #PID<0.140.0> (Supervisor.Default) started
+Pid: #PID<0.147.0>
+Start Call: XPReq.Test.Ownership.start_link([name: XPReq.Test.Ownership])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:54:11.911 [info] Application xp_req started at :nonode@nohost
+22:54:11.911 [info] Application burrito started at :nonode@nohost
+22:54:11.911 [info] Application erts started at :nonode@nohost
+22:54:11.911 [info] Application xp_schematic started at :nonode@nohost
+22:54:11.911 [info] Application xp_typed_struct started at :nonode@nohost
+22:54:11.911 [info] Application xp_gen_lsp started at :nonode@nohost
+22:54:11.916 [info] Child XPSnowflake.Generator of Supervisor #PID<0.150.0> (Supervisor.Default) started
+Pid: #PID<0.151.0>
+Start Call: XPSnowflake.Generator.start_link(0, 1023)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:54:11.917 [info] Application xp_snowflake started at :nonode@nohost
+22:54:11.917 [info] Application xp_sourceror started at :nonode@nohost
+22:54:11.917 [info] Application xp_forge started at :nonode@nohost
+22:54:11.917 [info] Application xp_logger_file_backend started at :nonode@nohost
+22:54:11.920 [info] Child :ttb_autostart of Supervisor :runtime_tools_sup started
+Pid: #PID<0.155.0>
+Start Call: :ttb_autostart.start_link()
+Restart: :temporary
+Shutdown: 3000
+Type: :worker
+22:54:11.920 [info] Application runtime_tools started at :nonode@nohost
+22:54:11.920 [info] Application et started at :nonode@nohost
+22:54:11.920 [info] Application observer started at :nonode@nohost
+22:54:11.920 [info] Application xp_path_glob started at :nonode@nohost
+22:54:11.925 [info] Child XPForge.Document.Store of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.159.0>
+Start Call: XPForge.Document.Store.start_link([derive: [analysis: &XPForge.Ast.analyze/1]])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:54:11.925 [info] Child XPExpert.ProjectSupervisor of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.160.0>
+Start Call: DynamicSupervisor.start_link([name: XPExpert.ProjectSupervisor, strategy: :one_for_one])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:54:11.925 [info] Child XPExpert.DynamicSupervisor of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.161.0>
+Start Call: DynamicSupervisor.start_link([name: XPExpert.DynamicSupervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:54:11.926 [info] Child XPGenLSP.Assigns of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.162.0>
+Start Call: XPGenLSP.Assigns.start_link([name: XPExpert.Assigns])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:54:11.926 [info] Child :expert_task_queue of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.163.0>
+Start Call: Task.Supervisor.start_link([name: :expert_task_queue])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+22:54:11.927 [info] Child XPGenLSP.Buffer of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.164.0>
+Start Call: XPGenLSP.Buffer.start_link([name: XPExpert.Buffer])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+22:54:11.927 [debug] [name: XPExpert, buffer: XPExpert.Buffer, task_supervisor: :expert_task_queue, dynamic_supervisor: XPExpert.DynamicSupervisor, assigns: XPExpert.Assigns]
+22:54:11.930 [info] Child XPExpert of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.165.0>
+Start Call: XPExpert.start_link([name: XPExpert, buffer: XPExpert.Buffer, task_supervisor: :expert_task_queue, dynamic_supervisor: XPExpert.DynamicSupervisor, assigns: XPExpert.Assigns])
+Restart: :permanent
+Shutdown: 500
+Type: :worker
+22:54:11.930 [info] Application xp_expert started at :nonode@nohost
+22:54:11.978 [info] Starting project at uri 
+22:54:11.981 [info] Engine initialized
+22:54:12.015 [debug] handled request client -> server initialize in 78ms
+22:54:12.020 [debug] sent request server -> client client/registerCapability
+22:54:12.031 [info] ################### opened file:///Users/christo/Work/elixir-in-action/todolist.ex
+22:54:12.031 [debug] handled notification client -> server textDocument/didOpen in 14ms
+22:54:12.034 [debug] handled notification client -> server initialized in 17ms
+22:54:12.034 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/document_symbols.ex:15: XPExpert.Provider.Handlers.DocumentSymbols.handle/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:94: XPExpert.handle_request/2
+    (xp_gen_lsp 0.11.1) lib/gen_lsp.ex:369: anonymous fn/2 in XPGenLSP.loop/3
+
+22:54:12.035 [debug] sent notification server -> client window/logMessage
+22:54:13.460 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/document_symbols.ex:15: XPExpert.Provider.Handlers.DocumentSymbols.handle/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:94: XPExpert.handle_request/2
+    (xp_gen_lsp 0.11.1) lib/gen_lsp.ex:369: anonymous fn/2 in XPGenLSP.loop/3
+
+22:54:13.460 [debug] sent notification server -> client window/logMessage
+22:54:18.501 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:122: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:54:18.501 [debug] sent notification server -> client window/logMessage
+22:54:18.501 [warning] client -> server notification crashed
+22:54:19.610 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/document_symbols.ex:15: XPExpert.Provider.Handlers.DocumentSymbols.handle/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:94: XPExpert.handle_request/2
+    (xp_gen_lsp 0.11.1) lib/gen_lsp.ex:369: anonymous fn/2 in XPGenLSP.loop/3
+
+22:54:19.610 [debug] sent notification server -> client window/logMessage
+22:54:21.161 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/provider/handlers/formatting.ex:16: XPExpert.Provider.Handlers.Formatting.handle/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:94: XPExpert.handle_request/2
+    (xp_gen_lsp 0.11.1) lib/gen_lsp.ex:369: anonymous fn/2 in XPGenLSP.loop/3
+
+22:54:21.161 [debug] sent notification server -> client window/logMessage
+22:54:21.178 [error] ** (FunctionClauseError) no function clause matching in IO.chardata_to_string/1
+    (elixir 1.17.3) lib/io.ex:696: IO.chardata_to_string(nil)
+    (elixir 1.17.3) lib/path.ex:507: Path.basename/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:59: XPForge.Project.name/1
+    (xp_forge 0.1.0-5dacce4) lib/forge/project.ex:79: XPForge.Project.node_name/1
+    (xp_expert 0.1.0-5dacce4) lib/expert/engine_api.ex:16: XPExpert.EngineApi.call/4
+    (xp_expert 0.1.0-5dacce4) lib/expert/state.ex:171: XPExpert.State.apply/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:200: XPExpert.apply_to_state/2
+    (xp_expert 0.1.0-5dacce4) lib/expert.ex:139: XPExpert.handle_notification/2
+
+22:54:21.178 [debug] sent notification server -> client window/logMessage
+22:54:21.178 [warning] client -> server notification crashed
+22:54:21.181 [debug] sent notification server -> client window/logMessage
+22:54:21.182 [info] Shutting down
+22:54:21.182 [error] ** (XPGenLSP.InvalidResponse) Invalid response for request shutdown.
+
+Response: {:ok, nil}
+Errors: "expected either null or a %XPGenLSP.ErrorResponse{}"
+
+22:54:21.182 [debug] handled request client -> server shutdown in 8ms
+22:54:21.186 [info] SIGTERM received - shutting down
+
